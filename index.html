@@ -3,445 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddharth Shetty - AI Engineer</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f9f9f9;
-            --card-bg: #ffffff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-info {
-            margin: 1rem 0;
-        }
-        
-        .contact-info a {
-            color: white;
-            margin: 0 0.5rem;
-            text-decoration: none;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .section {
-            padding: 3rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .about {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .skill-category {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .skill-list {
-            list-style: none;
-        }
-        
-        .skill-list li {
-            margin-bottom: 0.5rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .skill-list li::before {
-            content: "•";
-            color: var(--secondary-color);
-            position: absolute;
-            left: 0;
-        }
-        
-        .education-experience {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .timeline {
-            width: 100%;
-            max-width: 500px;
-        }
-        
-        .timeline-item {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .timeline-item h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-item p {
-            margin-bottom: 0.5rem;
-        }
-        
-        .timeline-item .date {
-            color: #777;
-            font-style: italic;
-        }
-        
-        .projects {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 350px;
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background-color: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem;
-            color: #777;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-        }
-        
-        footer a {
-            color: white;
-            margin: 0 0.5rem;
-        }
-        
-        .social-links {
-            margin: 1rem 0;
-        }
-        
-        .social-links a {
-            margin: 0 0.5rem;
-            text-decoration: none;
-        }
-        
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .education-experience {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .timeline {
-                width: 100%;
-            }
-            
-            .section {
-                padding: 2rem 0;
-            }
-            
-            .skill-category {
-                width: 100%;
-            }
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: var(--primary-color);
-            position: sticky;
-            top: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-        
-        .logo {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                padding: 1rem 0;
-            }
-            
-            .nav-links.show {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 0.5rem 2rem;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-
-        /* Dark mode toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-            font-size: 1.2rem;
-            margin-left: 1rem;
-        }
-        
-        .dark-mode {
-            --primary-color: #1a1a2e;
-            --secondary-color: #4361ee;
-            --text-color: #f1f1f1;
-            --bg-color: #121212;
-            --card-bg: #1e1e30;
-        }
-    </style>
+    <title>Siddharth Shetty | AI Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="nav-container container">
-            <a href="#" class="logo">Siddharth Shetty</a>
-            <button class="mobile-menu-btn">☰</button>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="theme-toggle">🌓</button>
-        </div>
-    </nav>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-    <header>
-        <div class="container">
-            <img src="DSCN4457edit.jpg" alt="Siddharth Shetty" class="profile-img">
-            <h1>Siddharth Shetty</h1>
-            <p class="subtitle">Artificial Intelligence Engineer</p>
-            <p>Cottbus, DE | M.Sc. Artificial Intelligence Student</p>
-            <div class="contact-info">
-                <a href="mailto:siddharth.shetty109@gmail.com">📧 Email</a>
-                <a href="https://www.linkedin.com/in/sid7shetty/" target="_blank">💼 LinkedIn</a>
-                <a href="https://github.com/sid7shetty" target="_blank">📁 GitHub</a>
+    <!-- Navigation bar HTML - This replaces the current <nav> section in your index.html -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#" class="logo">AI is the Future </a>
+        <button class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+            <li><button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button></li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="progress-bar" id="scrollProgress"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="animated-title">
+                    <span class="hide-text">
+                        <span class="text-reveal">Siddharth Shetty</span>
+                    </span>
+                    
+                </h1>
+                <p class="subtitle fade-in">AI Engineer & Data Specialist</p>
+                <div class="hero-cta fade-in">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="images/profile.jpg" alt="Siddharth Shetty" class="profile-img">
             </div>
         </div>
+        <a href="#about" class="scroll-down">
+            <span class="scroll-text">Scroll Down</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </header>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about">
-                <p>I'm an M.Sc. Artificial Intelligence student specializing in data engineering, GenAI applications, and Python-based automation. With experience in leveraging Microsoft Excel, Word, SharePoint, and Python for data analysis and process optimization, I excel at communicating complex technical ideas to diverse audiences. I'm a strong problem-solver with critical thinking abilities and a proactive team collaborator, actively seeking a role to contribute to GenAI-driven initiatives and data engineering projects.</p>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="animate-on-scroll">I am an M.Sc. Artificial Intelligence student at Brandenburg University of Technology specializing in data engineering, GenAI applications, and end-to-end Python automation. </p>
+                    <p class="animate-on-scroll"> A proactive problem-solver and collaborative team player, I’m eager to drive GenAI-driven initiatives and large-scale data engineering projects.</p>
+                    <div class="about-stats animate-on-scroll">
+                        <div class="stat">
+                            <h3>3+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat">
+                            <h3>10+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>4+</h3>
+                            <p>Certifications</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image animate-on-scroll">
+                    <div class="about-image-container">
+                        <img src="images/profile2.jpg" alt="Siddharth Shetty" class="secondary-img">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section">
+    <section id="skills" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>Shell Scripting</li>
-                        <li>C++</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Tools</h3>
-                    <ul class="skill-list">
-                        <li>Microsoft Excel</li>
-                        <li>Word</li>
-                        <li>SharePoint</li>
-                        <li>Power Apps (Basic)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>AI & GenAI Tools</h3>
-                    <ul class="skill-list">
-                        <li>Llama2</li>
-                        <li>Hugging Face</li>
-                        <li>Streamlit</li>
-                        <li>LangChain</li>
-                        <li>Azure, AWS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning/AI</h3>
-                    <ul class="skill-list">
-                        <li>CNN, RNN, LSTM</li>
-                        <li>YOLOv8</li>
-                        <li>OpenCV</li>
-                        <li>Anomaly Detection</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Python Libraries</h3>
-                    <ul class="skill-list">
-                        <li>TensorFlow, PyTorch</li>
-                        <li>FastAI</li>
-                        <li>Pandas, NumPy</li>
-                        <li>Matplotlib</li>
-                        <li>Scikit-learn</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Other</h3>
-                    <ul class="skill-list">
-                        <li>Linux, Windows</li>
-                        <li>Git, Docker</li>
-                        <li>Unreal Engine 5</li>
-                    </ul>
+            <div class="section-header">
+                <h2 class="section-title">My Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skills-grid">
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Programming</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/python-logo.svg" alt="Python" class="skill-logo"> Python</li>
+                            <li><img src="images/logos/shell-logo.svg" alt="Shell Scripting" class="skill-logo"> Shell Scripting</li>
+                            <li><img src="images/logos/cpp-logo.svg" alt="C++" class="skill-logo"> C++</li>
+                            <li><img src="images/logos/javascript-logo.svg" alt="JavaScript" class="skill-logo"> JavaScript</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <h3>Data Tools</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/excel2-svgrepo-com.svg" alt="Microsoft Excel" class="skill-logo"> Microsoft Excel</li>
+                            <li><img src="images/logos/word2-svgrepo-com.svg" alt="Word" class="skill-logo">Word</li>
+                            <li><img src="images/logos/ms-sharepoint-svgrepo-com.svg" alt="SharePoint" class="skill-logo">SharePoint</li>
+                            <li><img src="images/logos/icons8-microsoft-power-apps.svg" alt="Power Apps (Basic)" class="skill-logo">Power Apps (Basic)</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI & GenAI Tools</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/llama-svgrepo-com.svg" alt="Llama2" class="skill-logo">Llama2</li>
+                            <li><img src="images/logos/hugging-face-svgrepo-com.svg" alt="Hugging Face" class="skill-logo">Hugging Face</li>
+                            <li><img src="images/logos/streamlit-seeklogo.svg" alt="Streamlit" class="skill-logo">Streamlit</li>
+                            <li><img src="images/logos/Langchain--Streamline-Simple-Icons.svg" alt="LangChain" class="skill-logo">LangChain</li>
+                            
+                        </ul>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Machine Learning/AI</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/machine-learning-model-svgrepo-com.svg" alt="CNN, RNN, LSTM" class="skill-logo">CNN, RNN, LSTM</li>
+                            <li><img src="images/logos/UltralyticsYOLO_mark_blue.svg" alt="YOLOv8" class="skill-logo">YOLOv8</li>
+                            <li><img src="images/logos/opencv-ar21.svg" alt="OpenCV" class="skill-logo">OpenCV</li>
+                            <li><img src="images/logos/anomaly-svgrepo-com.svg" alt="Anomaly Detection" class="skill-logo">Anomaly Detection</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <h3>Python Libraries</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/tensorflow-svgrepo-com.svg" alt="TensorFlow" class="skill-logo">TensorFlow</li>
+                            <li><img src="images/logos/numpy-svgrepo-com.svg" alt="NumPy" class="skill-logo">NumPy</li>
+                            <li><img src="images/logos/pandas-svgrepo-com.svg" alt="Pandas" class="skill-logo">Pandas</li>
+                            <li><img src="images/logos/Matplotlib-Icon--Streamline-Svg-Logos.svg" alt="Matplotlib" class="skill-logo">Matplotlib</li>
+                            <li><img src="images/logos/scikit-learn.svg" alt="Scikit-learn" class="skill-logo">Scikit-learn</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category animate-on-scroll">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Other</h3>
+                        <ul class="skill-list">
+                            <li><img src="images/logos/linux-svgrepo-com.svg" alt="Linux" class="skill-logo">Linux </li>
+                            <li><img src="images/logos/windows-applications-svgrepo-com.svg" alt="Windows" class="skill-logo">Windows</li>
+                            <li><img src="images/logos/azure-svgrepo-com.svg" alt="Azure" class="skill-logo">Azure</li>
+                            <li><img src="images/logos/docker-svgrepo-com.svg" alt="Docker" class="skill-logo">Docker</li>
+                            <li><img src="images/logos/unreal-engine-svgrepo-com.svg" alt="Unreal Engine 5" class="skill-logo">Unreal Engine 5</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -449,49 +189,71 @@
 
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="education-experience">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline-container">
                 <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Machine Learning Intern</h3>
-                        <p>Corizo – Mumbai, India</p>
-                        <p class="date">Nov 2022 – Jan 2023</p>
-                        <ul class="skill-list">
-                            <li>Developed pre-processing pipelines enhancing data quality using Python (NumPy, Pandas)</li>
-                            <li>Built scalable machine learning models for optimization and predictive analytics</li>
-                            <li>Created dynamic data visualization dashboards using Matplotlib and Plotly</li>
-                            <li>Collaborated on deploying AI-driven solutions via Google Cloud</li>
-                        </ul>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="images/logos/corizo.png" alt="Corizo Logo" class="company-logo1">
+                            <div class="timeline-date">Nov 2022 – Jan 2023</div>
+                            <h3>Machine Learning Intern</h3>
+                            <p class="timeline-company">Corizo – Mumbai, India</p>
+                            <ul class="timeline-details">
+                                <li>Developed pre-processing pipelines enhancing data quality using Python (NumPy, Pandas)</li>
+                                <li>Built scalable machine learning models for optimization and predictive analytics</li>
+                                <li>Created dynamic data visualization dashboards using Matplotlib and Plotly</li>
+                                <li>Collaborated on deploying AI-driven solutions via Google Cloud</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="timeline-item">
-                        <h3>Network Engineer</h3>
-                        <p>BOB Data Centre – Hyderabad, India</p>
-                        <p class="date">Mar 2021 – May 2022</p>
-                        <ul class="skill-list">
-                            <li>Optimized network switch response times by automating tasks with Python scripts</li>
-                            <li>Resolved infrastructure and security issues using PuTTY and physical network inspections</li>
-                            <li>Troubleshot Linux server communication and telecom system malfunctions</li>
-                        </ul>
+                    <div class="timeline-item animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <img src="images/logos/bank-of-baroda-1.svg" alt="Bank of Baroda" class="company-logo2">
+                            <div class="timeline-date">Mar 2021 – May 2022</div>
+                            <h3>Network Engineer</h3>
+                            <p class="timeline-company">BOB Data Centre – Hyderabad, India</p>
+                            <ul class="timeline-details">
+                                <li>Optimized network switch response times by automating tasks with Python scripts</li>
+                                <li>Resolved infrastructure and security issues using PuTTY and physical network inspections</li>
+                                <li>Troubleshot Linux server communication and telecom system malfunctions</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="section">
+    <section id="education" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-experience">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>M.Sc. Artificial Intelligence</h3>
-                        <p>Brandenburg University of Technology, Cottbus</p>
-                        <p class="date">Present</p>
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="education-grid">
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <div class="timeline-item">
+                    <div class="education-content">
+                        <h3>M.Sc. Artificial Intelligence</h3>
+                        <p class="education-institution">Brandenburg University of Technology, Cottbus</p>
+                        <p class="education-date">Present</p>
+                    </div>
+                </div>
+                <div class="education-card animate-on-scroll">
+                    <div class="education-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-content">
                         <h3>B.Tech. Computer Science Engineering</h3>
-                        <p>Pune University</p>
-                        <p class="date">2016 – 2020</p>
+                        <p class="education-institution">Pune University</p>
+                        <p class="education-date">2016 – 2020</p>
                     </div>
                 </div>
             </div>
@@ -500,70 +262,157 @@
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <div class="project-img">AI Music Classification</div>
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-background" style="background-image: url('images/projects/music-classifier.jpg');"></div>
+                        <div class="project-title-overlay">
+                            <h3>AI-Driven Music Genre Classification</h3>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>AI-Driven Music Genre Classification</h3>
-                        <ul class="skill-list">
-                            <li>Designed and implemented a Python-based pipeline using Librosa for audio feature extraction</li>
-                            <li>Applied data augmentation techniques to enhance model robustness</li>
-                            <li>Achieved strong F1-scores and precision-recall performance metrics for deployment readiness</li>
-                        </ul>
+                        <p class="project-description">Python-based pipeline for audio analysis and genre prediction</p>
+                        <div class="project-details">
+                            <ul class="project-features">
+                                <li>Librosa for audio feature extraction</li>
+                                <li>Advanced data augmentation techniques</li>
+                                <li>High F1-scores and precision-recall metrics</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/sid7shetty/ML_Chord_recognition" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/sid7shetty/ML_Chord_recognition" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Digit Classifier</div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-background" style="background-image: url('images/projects/digit-classifier.jpg');"></div>
+                        <div class="project-title-overlay">
+                            <h3>Digit Classifier with Scalable Training</h3>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Digit Classifier with Scalable Training</h3>
-                        <ul class="skill-list">
-                            <li>Built a GPU-optimized digit classification model integrating batch normalization and dropout layers</li>
-                            <li>Automated training workflows with shell scripting for improved reproducibility and scalability</li>
-                            <li>Analyzed model efficiency across iterative training cycles</li>
-                        </ul>
+                        <p class="project-description">GPU-optimized digit classification with automated workflows</p>
+                        <div class="project-details">
+                            <ul class="project-features">
+                                <li>Batch normalization and dropout layers</li>
+                                <li>Shell scripting for improved reproducibility</li>
+                                <li>Efficiency analysis across training cycles</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Football Analysis</div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-background" style="background-image: url('images/projects/football-analysis.jpg');"></div>
+                        <div class="project-title-overlay">
+                            <h3>Football Passing Network Analysis</h3>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Football Passing Network Analysis</h3>
-                        <p class="date">Master's Project</p>
-                        <ul class="skill-list">
-                            <li>Created a Python tool for visualizing passing networks in football matches</li>
-                            <li>Conducted in-depth tactical analysis of the 2010/11 UEFA Champions League Final</li>
-                            <li>Built an interactive visualization framework for tactical football research</li>
-                        </ul>
+                        <p class="project-description">Master's Project - Interactive visualization tool for football tactics</p>
+                        <div class="project-details">
+                            <ul class="project-features">
+                                <li>Python visualization tools</li>
+                                <li>Analysis of 2010/11 UEFA Champions League Final</li>
+                                <li>Interactive tactical football research framework</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Fake News Detection</div>
+                <div class="project-card animate-on-scroll">
+                    <div class="project-image">
+                        <div class="project-background" style="background-image: url('images/projects/fake-news.jpg');"></div>
+                        <div class="project-title-overlay">
+                            <h3>Fake News Detection Using ML</h3>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Fake News Detection Using ML</h3>
-                        <p class="date">Bachelor's Project</p>
-                        <ul class="skill-list">
-                            <li>Developed an NLP-based machine learning model using tokenization and vectorization</li>
-                            <li>Achieved over 85% accuracy using Logistic Regression and Random Forest classifiers</li>
-                            <li>Deployed a real-time web app with Flask and Streamlit</li>
-                        </ul>
+                        <p class="project-description">Bachelor's Project - NLP-based news verification system</p>
+                        <div class="project-details">
+                            <ul class="project-features">
+                                <li>NLP with tokenization and vectorization</li>
+                                <li>Over 85% accuracy with ML classifiers</li>
+                                <li>Flask and Streamlit web application</li>
+                            </ul>
+                            <div class="project-links">
+                                <a href="https://github.com/sid7shetty/Fake-News-Detection-using-ML" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/sid7shetty/Fake-News-Detection-using-ML" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="section">
+    <section id="certifications" class="section section-alt">
         <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="skills">
-                <div class="skill-category">
-                    <h3>Professional Certifications</h3>
-                    <ul class="skill-list">
-                        <li>Google Python Certification</li>
-                        <li>Certified Ethical Hacker (CEH)</li>
-                        <li>British Airways Data Science Job Simulation</li>
-                        <li>Electronic Arts Software Engineering Job Simulation</li>
-                    </ul>
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="certifications-grid">
+                <div class="certification-card animate-on-scroll">
+                    <div class="certification-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Google Python Certification</h3>
+                    </div>
+                </div>
+                <div class="certification-card animate-on-scroll">
+                    <div class="certification-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Certified Ethical Hacker (CEH)</h3>
+                    </div>
+                </div>
+                <div class="certification-card animate-on-scroll">
+                    <div class="certification-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>British Airways Data Science Job Simulation</h3>
+                    </div>
+                </div>
+                <div class="certification-card animate-on-scroll">
+                    <div class="certification-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <div class="certification-content">
+                        <h3>Electronic Arts Software Engineering Job Simulation</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -571,17 +420,67 @@
 
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="about">
-                <p>Feel free to reach out to me via email or connect with me on LinkedIn!</p>
-                <div class="contact-info" style="margin-top: 2rem;">
-                    <p>📍 Cottbus, DE</p>
-                    <p>📞 +49 176 8796 3523</p>
-                    <p>📧 <a href="mailto:siddharth.shetty109@gmail.com" style="color: var(--secondary-color);">siddharth.shetty109@gmail.com</a></p>
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Cottbus, Germany</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:siddharth.shetty109@gmail.com">siddharth.shetty109@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+49 176 8796 3523</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://www.linkedin.com/in/sid7shetty/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/sid7shetty" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:siddharth.shetty109@gmail.com" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/sid7shetty/" target="_blank" style="color: var(--secondary-color);">LinkedIn</a>
-                    <a href="https://github.com/sid7shetty" target="_blank" style="color: var(--secondary-color);">GitHub</a>
+                <div class="contact-form animate-on-scroll">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -589,69 +488,36 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Siddharth Shetty. All rights reserved.</p>
-            <div class="social-links">
-                <a href="mailto:siddharth.shetty109@gmail.com">Email</a>
-                <a href="https://www.linkedin.com/in/sid7shetty/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/sid7shetty" target="_blank">GitHub</a>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Siddharth Shetty</h3>
+                    <p>AI Engineer & Data Specialist</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/sid7shetty/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/sid7shetty" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:siddharth.shetty109@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Siddharth Shetty. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
-        });
-        
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('show');
-            });
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Dark mode toggle
-        const themeToggle = document.querySelector('.theme-toggle');
-        
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            
-            if (document.body.classList.contains('dark-mode')) {
-                themeToggle.textContent = '🌞';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                themeToggle.textContent = '🌓';
-                localStorage.setItem('theme', 'light');
-            }
-        });
-        
-        // Check for saved theme preference
-        if (localStorage.getItem('theme') === 'dark') {
-            document.body.classList.add('dark-mode');
-            themeToggle.textContent = '🌞';
-        }
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

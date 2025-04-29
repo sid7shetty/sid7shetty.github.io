@@ -1,0 +1,290 @@
+/* =========================
+   Text Animations
+   ========================= */
+
+   .animated-title {
+    overflow: hidden;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hide-text {
+    display: block;
+    overflow: hidden;
+}
+
+.text-reveal {
+    display: block;
+    animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    transform: translateY(100%);
+    will-change: transform;
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Fade In Animations
+   ========================= */
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+    will-change: opacity, transform;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Scroll Animations
+   ========================= */
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   Staggered Fade In
+   ========================= */
+
+.staggered-fade-in > * {
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
+}
+
+.staggered-fade-in > *.show {
+    animation: staggerFadeIn 0.5s ease forwards;
+}
+
+.staggered-fade-in > *:nth-child(1).show { animation-delay: 0.1s; }
+.staggered-fade-in > *:nth-child(2).show { animation-delay: 0.2s; }
+.staggered-fade-in > *:nth-child(3).show { animation-delay: 0.3s; }
+.staggered-fade-in > *:nth-child(4).show { animation-delay: 0.4s; }
+.staggered-fade-in > *:nth-child(5).show { animation-delay: 0.5s; }
+.staggered-fade-in > *:nth-child(6).show { animation-delay: 0.6s; }
+
+@keyframes staggerFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   Hover Effects
+   ========================= */
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-image {
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: transform;
+}
+
+/* =========================
+   Button Animations
+   ========================= */
+
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   Navbar Scroll Animation
+   ========================= */
+
+.navbar.scrolled {
+    padding: 0.7rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Section Transitions
+   ========================= */
+
+.section {
+    position: relative;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* =========================
+   Card Hover Effects
+   ========================= */
+
+.skill-category, 
+.education-card, 
+.certification-card,
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform, box-shadow;
+}
+
+.skill-category:hover, 
+.education-card:hover, 
+.certification-card:hover,
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Timeline Animations
+   ========================= */
+
+.timeline-dot::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot::before {
+    transform: scale(2);
+}
+
+/* =========================
+   Contact Form Animations
+   ========================= */
+
+.contact-form input,
+.contact-form textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* =========================
+   Social Links Hover Effects
+   ========================= */
+
+.social-link {
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+/* =========================
+   Custom Page Transitions
+   ========================= */
+
+.page-transition {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    will-change: transform;
+}
+
+.page-transition.active {
+    transform: translateY(0);
+}
+
+.page-transition.exit {
+    transform: translateY(-100%);
+}
+
+/* =========================
+   Image Optimizations
+   ========================= */
+
+.profile-img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    /* Apply a very subtle filter to improve image quality without heavy processing */
+    filter: brightness(1.02);
+}
+
+/* Style for profile picture container to ensure consistent sizing */
+.profile-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* =========================
+   Accessibility: Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in,
+    .animate-on-scroll,
+    .staggered-fade-in > *,
+    .text-reveal,
+    .btn,
+    .project-card,
+    .skill-category,
+    .education-card,
+    .certification-card,
+    .page-transition {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        transition-delay: 0s !important;
+    }
+}
