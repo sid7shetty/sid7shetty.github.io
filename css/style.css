@@ -491,53 +491,106 @@
     color: var(--text-light);
   }
   
-  /* Projects section */
-  /* Updated Project Image Styles */
-.project-image {
-    height: 350px;
+ /* New Project Cards - Inline Layout */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+  
+  .project-card-inline {
+    flex: 1;
+    min-width: 250px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-card-inline:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 123, 255, 0.1);
+    border-radius: 50%;
+  }
+  
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .project-category {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .view-more {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    margin-top: auto;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+  }
+  
+  .view-more i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .view-more:hover {
+    color: var(--primary-color);
+    opacity: 0.9;
+  }
+  
+  .view-more:hover i {
+    transform: translateX(5px);
+  }
+  
+  /* Keep existing project grid styles for your other pages */
+  .projects-grid {
+    display: none; /* Hide the old grid if you want to completely switch to the new design */
+  }
+  
+  /* Media queries for responsive layout */
+  @media (max-width: 992px) {
+    .projects-container {
+      flex-direction: row; /* Keep row layout on medium screens */
+      flex-wrap: wrap;
+    }
     
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    .project-card-inline {
+      flex: 0 0 calc(50% - 1rem); /* Two cards per row on medium screens */
+      margin-bottom: 2rem;
+    }
   }
   
-  .project-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
-    z-index: 1;
+  @media (max-width: 768px) {
+    .project-card-inline {
+      flex: 0 0 100%; /* One card per row on small screens */
+    }
   }
-  
-  .project-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.5s ease;
-  }
-  
-  .project-card:hover .project-background {
-    transform: scale(1.05);
-  }
-  
-  .project-title-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    color: white;
-    font-weight: 100;
-    z-index: 2;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-  }
+
   
   /* Certifications section */
   .certifications-grid {
